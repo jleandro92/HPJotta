@@ -1,0 +1,2 @@
+class DominioException(Exception):
+    pass

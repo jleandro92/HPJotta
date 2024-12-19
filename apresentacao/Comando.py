@@ -45,6 +45,19 @@ class AdicionarPacienteEmUmLeitoDaAla(Comando):
         except ValueError as e:
             print(f"Erro ao alocar paciente: {e}")
 
+class RemoverPaciente(Comando):
+    def descricao(self):
+        return "Remover o Paciente" 
+    
+    def execute(self):
+        nome_ala = input("Digite o nome da Ala: ")
+        nome_paciente = (input("Digite o nome do leito: "))
+        try:
+            Hospital.remover_paciente(nome_ala, nome_paciente)
+            print(f"Paciente removido do leito {nome_paciente} da ala '{nome_ala}'.")
+        except:
+            print(f"Erro ao remover paciente")   
+
 class RelatorioDeAla(Comando):
     def descricao(self):
         return "Exibir relatório de alas"
